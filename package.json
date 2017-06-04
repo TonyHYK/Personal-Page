@@ -4,7 +4,7 @@
   "private": true,
   "description": "Single Page Apps for GitHub Pages",
   "scripts": {
-    "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --open",
+    "start": "webpack-dev-server --devtool eval-source-map --history-api-fallback --inline --hot",
     "build": "webpack -p"
   },
   "repository": {
@@ -14,10 +14,9 @@
   "author": "Rafael Pedicini <code@rafrex.com>",
   "license": "MIT",
   "dependencies": {
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-interactive": "^0.6.5",
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
