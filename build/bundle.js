@@ -12206,21 +12206,30 @@ function Header() {
 	return _react2.default.createElement(
 		'div',
 		{ className: 'header' },
-		_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: function render() {
-				return _react2.default.createElement(
-					'h1',
-					null,
-					'Tony Hung'
-				);
-			} }),
-		_react2.default.createElement('div', { className: 'profile' }),
-		_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: function render() {
-				return _react2.default.createElement(
-					'h2',
-					{ className: 'keywords' },
-					'Programmer | Gamer | Traveler'
-				);
-			} })
+		_react2.default.createElement(
+			_reactRouterDom.Switch,
+			null,
+			_react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', render: function render() {
+					return _react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Tony Hung'
+						),
+						_react2.default.createElement('div', { className: 'profile' }),
+						_react2.default.createElement(
+							'h2',
+							{ className: 'keywords' },
+							'Programmer | Gamer | Traveler'
+						)
+					);
+				} }),
+			_react2.default.createElement(_reactRouterDom.Route, { render: function render() {
+					return _react2.default.createElement('div', { className: 'profile hideOnMobile' });
+				} })
+		)
 	);
 }
 
@@ -12470,7 +12479,7 @@ exports.i(__webpack_require__(113), "");
 exports.i(__webpack_require__(112), "");
 
 // module
-exports.push([module.i, "/*\n * bootstrap files customized and compiled from\n * http://getbootstrap.com/customize/?id=c54d1d4c1770f95019de65a96e8efc19\n */\n.content {\n  margin: auto;\n  max-width: 600px;\n}\n.content a {\n  font-style: italic;\n}\n.header {\n  margin-bottom: 30px;\n}\n.header h1 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n.header .keywords {\n  font-size: 20px;\n  text-align: center;\n  margin-top: 25px;\n}\n.header .profile {\n  width: 150px;\n  height: 150px;\n  margin: auto;\n  background-image: url(" + __webpack_require__(131) + ");\n  background-size: cover;\n  background-position-x: -20px;\n  border-radius: 75px;\n  box-shadow: 0px 0px 5px #333;\n}\n.carousel {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: -10;\n}\n.carousel .background {\n  filter: brightness(30%);\n  background-size: cover;\n  height: 100vh;\n}\n@media (min-width: 1200px) {\n  .carousel .background {\n    background-position-y: -100px;\n    /* due to background-size cover, on widescreen, the image is heavily skewed to the upper portion */\n  }\n}\n.carousel .back1 {\n  background-image: url(" + __webpack_require__(128) + ");\n}\n.carousel .back2 {\n  background-image: url(" + __webpack_require__(129) + ");\n}\n.carousel .back3 {\n  background-image: url(" + __webpack_require__(130) + ");\n}\n.navbar-default .navbar-nav > li > a {\n  text-shadow: initial;\n  transition: 0.3s all linear;\n  text-align: center;\n}\n.navbar-default .navbar-nav > li > a:hover {\n  background-color: rgba(0, 0, 0, 0.2);\n}\n.navbar.navbar-default {\n  border: 0;\n  box-shadow: none;\n}\n", ""]);
+exports.push([module.i, "/*\n * bootstrap files customized and compiled from\n * http://getbootstrap.com/customize/?id=c54d1d4c1770f95019de65a96e8efc19\n */\n.content {\n  margin: auto;\n  max-width: 600px;\n}\n.content a {\n  font-style: italic;\n}\n.header {\n  margin-bottom: 30px;\n}\n.header h1 {\n  text-align: center;\n  margin-bottom: 20px;\n}\n.header .keywords {\n  font-size: 20px;\n  text-align: center;\n  margin-top: 25px;\n}\n.header .profile {\n  width: 150px;\n  height: 150px;\n  margin: auto;\n  background-image: url(" + __webpack_require__(131) + ");\n  background-size: cover;\n  background-position-x: -20px;\n  border-radius: 75px;\n  box-shadow: 0px 0px 5px #333;\n}\n.carousel {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: -10;\n}\n.carousel .background {\n  filter: brightness(30%);\n  background-size: cover;\n  height: 100vh;\n}\n@media (min-width: 1200px) {\n  .carousel .background {\n    background-position-y: -100px;\n    /* due to background-size cover, on widescreen, the image is heavily skewed to the upper portion */\n  }\n}\n.carousel .back1 {\n  background-image: url(" + __webpack_require__(128) + ");\n}\n.carousel .back2 {\n  background-image: url(" + __webpack_require__(129) + ");\n}\n.carousel .back3 {\n  background-image: url(" + __webpack_require__(130) + ");\n}\n.navbar-default .navbar-nav > li > a {\n  text-shadow: initial;\n  transition: 0.3s all linear;\n  text-align: center;\n}\n.navbar-default .navbar-nav > li > a:hover {\n  background-color: rgba(0, 0, 0, 0.2);\n}\n.navbar.navbar-default {\n  border: 0;\n  box-shadow: none;\n}\n@media (max-width: 767px) {\n  /* default margins cause white spaces on mobile */\n  .navbar-nav {\n    margin: 0;\n  }\n  .container-fluid > .navbar-collapse.collapse {\n    margin: 0;\n  }\n  .hideOnMobile {\n    display: none;\n  }\n  p {\n    margin-left: 10px;\n    margin-right: 10px;\n    text-align: center;\n  }\n}\n", ""]);
 
 // exports
 

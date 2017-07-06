@@ -36,9 +36,16 @@ function Content() {
 function Header() {
 	return (
 		<div className="header">
-			<Route exact path="/" render={() => <h1>Tony Hung</h1>} />
-			<div className="profile" />
-			<Route exact path="/" render={() => <h2 className="keywords">Programmer | Gamer | Traveler</h2>} />
+			<Switch>
+				<Route exact path="/" render={() => (
+					<div>
+						<h1>Tony Hung</h1>
+						<div className="profile" />
+						<h2 className="keywords">Programmer | Gamer | Traveler</h2>
+					</div>
+				)} />
+				<Route render={() => <div className="profile hideOnMobile" />} />
+			</Switch>
 		</div>
 	)
 }

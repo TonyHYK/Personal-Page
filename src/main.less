@@ -83,3 +83,24 @@
 	border: 0;
 	box-shadow: none;
 }
+
+@media (max-width: 767px) {
+	/* default margins cause white spaces on mobile */
+	.navbar-nav {
+		margin: 0;
+	}
+
+	.container-fluid > .navbar-collapse.collapse {
+		margin: 0;
+	}
+
+	.hideOnMobile {
+		display: none;
+	}
+
+	p {
+		margin-left: 10px;
+		margin-right: 10px;
+		text-align: center;
+	}
+}
