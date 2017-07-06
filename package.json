@@ -5,7 +5,7 @@
   "description": "Single Page Apps for GitHub Pages",
   "scripts": {
     "start": "webpack-dev-server --watch-poll",
-    "build": "webpack -p"
+    "build": "webpack"
   },
   "author": "Tony Hung",
   "license": "MIT",
