@@ -11,7 +11,8 @@ module.exports = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.less$/, loader: "style-loader!css-loader!less-loader"},
+      { test: /\.(css|less)$/, loader: "style-loader!css-loader!less-loader"},
+      { test: /\.(png|jpg)$/, loader: 'file-loader'},
     ],
   },
 

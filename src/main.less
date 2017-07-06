@@ -1,6 +1,85 @@
-h1 {
-	margin-top: 50px;
+/*
+ * bootstrap files customized and compiled from
+ * http://getbootstrap.com/customize/?id=c54d1d4c1770f95019de65a96e8efc19
+ */
+@import "./bootstrap/bootstrap.min.css";
+@import "./bootstrap/bootstrap-theme.min.css";
+
+.content {
+	margin: auto;
+	max-width: 600px;
+
+	a {
+		font-style: italic;
+	}
+}
+
+.header {
+	margin-bottom: 30px;
+
+	h1 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.keywords {
+		font-size: 20px;
+		text-align: center;
+		margin-top: 25px;
+	}
+
+	.profile {
+		width: 150px;
+		height: 150px;
+		margin: auto;
+		background-image: url("./img/profile.jpg");
+		background-size: cover;
+		background-position-x: -20px;
+		border-radius: 75px;
+		box-shadow: 0px 0px 5px #333;
+	}
+}
+
+.carousel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -10;
+
+	.background {
+		filter: brightness(30%);
+		background-size: cover;
+		height: 100vh;
+
+		@media (min-width: 1200px) {
+			background-position-y: -100px; /* due to background-size cover, on widescreen, the image is heavily skewed to the upper portion */
+		}
+	}
+
+	.back1 {
+		background-image: url("./img/background.jpg");
+	}
+
+	.back2 {
+		background-image: url("./img/background2.jpg");
+	}
+
+	.back3 {
+		background-image: url("./img/background3.jpg");
+	}
+}
+
+.navbar-default .navbar-nav > li > a {
+	text-shadow: initial;
+	transition: 0.3s all linear;
 	text-align: center;
-	color: #333333;
-	font-weight: bold;
+
+	&:hover {
+		background-color: rgba(0,0,0,0.2);
+	}
+}
+
+.navbar.navbar-default {
+	border: 0;
+	box-shadow: none;
 }
