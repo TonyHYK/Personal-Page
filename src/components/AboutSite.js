@@ -11,7 +11,7 @@ export default function() {
 				Background image carousel is from <a href="https://github.com/leandrowd/react-responsive-carousel">here</a>.
 			</p>
 			<p>
-				You can find the GitHub repo <a href="https://github.com/TonyHYK/Personal-Page">here</a>.
+				You can find the GitHub repo <a href="https://github.com/TonyHYK/tonyhyk.github.io">here</a>.
 			</p>
 		</div>
 }

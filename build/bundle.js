@@ -12121,7 +12121,7 @@ exports.default = function () {
 			"You can find the GitHub repo ",
 			_react2.default.createElement(
 				"a",
-				{ href: "https://github.com/TonyHYK/Personal-Page" },
+				{ href: "https://github.com/TonyHYK/tonyhyk.github.io" },
 				"here"
 			),
 			"."
