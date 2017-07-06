@@ -4,6 +4,7 @@ import AboutMe from './AboutMe';
 import AboutSite from './AboutSite';
 import Work from './Work';
 import Contact from './Contact';
+import isMobile from 'is-mobile';
 
 //carousel stuff
 import {Carousel} from 'react-responsive-carousel';
@@ -69,22 +70,30 @@ function NavBar() {
 }
 
 function BackgroundCarousel() {
-	return (
-		<Carousel className="carousel" axis="horizontal" showThumbs={false} showStatus={false} showArrows={false} autoPlay infiniteLoop interval={5000}>
-			<div>
-				<div className="background back1"/>
-				<p className="legend">Kayangan Lake, Philippines</p>
+	if (isMobile()) {
+		return (
+			<div className="carousel">
+				<div className="background backMobile" />
 			</div>
-			<div>
-				<div className="background back2"/>
-				<p className="legend">Nara, Japan</p>
-			</div>
-			<div>
-				<div className="background back3"/>
-				<p className="legend">Berlin, Germany</p>
-			</div>
-		</Carousel>
-	);
+		);
+	} else {
+		return (
+			<Carousel className="carousel" axis="horizontal" showThumbs={false} showStatus={false} showArrows={false} autoPlay infiniteLoop interval={5000}>
+				<div>
+					<div className="background back1"/>
+					<p className="legend">Kayangan Lake, Philippines</p>
+				</div>
+				<div>
+					<div className="background back2"/>
+					<p className="legend">Nara, Japan</p>
+				</div>
+				<div>
+					<div className="background back3"/>
+					<p className="legend">Berlin, Germany</p>
+				</div>
+			</Carousel>
+		);
+	}
 }
 
 const RowLink = ({url, label}) => <li><Link to={url}>{label}</Link></li>
