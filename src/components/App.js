@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
+import React, { Component } from 'react';
 import AboutMe from './AboutMe';
 import AboutSite from './AboutSite';
 import Work from './Work';
@@ -10,58 +9,82 @@ import isMobile from 'is-mobile';
 import {Carousel} from 'react-responsive-carousel';
 import 'style-loader!react-responsive-carousel/lib/styles/carousel.css';
 
-export default function App() {
-	return (
-		<div>
-			<NavBar />
-			<Header />
-			<Content />
-			<BackgroundCarousel />
-		</div>
-	);
+let TABS = ["Home", "Work", "Contact", "About Me", "About This Site"];
+
+class App extends Component {
+	constructor(props) {
+		super(props);
+		this.changeTab = this.changeTab.bind(this);
+		this.state = {tab: TABS[0]};
+	}
+
+	render() {
+		return (
+			<div>
+				<NavBar changeTab={this.changeTab} />
+				<Header tab={this.state.tab} />
+				<Content tab={this.state.tab} />
+				<BackgroundCarousel />
+			</div>
+		);
+	}
+
+	changeTab(newTab) {
+		this.setState({tab: TABS[newTab]});
+	}
 }
 
-function Content() {
-  return (
-	<div className="content">
-		<Switch>
-			<Route exact path="/about-me" component={AboutMe} />
-			<Route exact path="/about-site" component={AboutSite} />
-			<Route exact path="/work" component={Work} />
-			<Route exact path="/contact" component={Contact} />
-		</Switch>
-	</div>
-	)
+function Content({tab}) {
+	let div;
+	switch (tab) {
+		case TABS[1]:
+			div = <Work />;
+			break;
+		case TABS[2]:
+			div = <Contact />;
+			break;
+		case TABS[3]:
+			div = <AboutMe />;
+			break;
+		case TABS[4]:
+			div = <AboutSite />;
+			break;
+		default:
+			div = <div />;
+	}
+	return <div className="content">{div}</div>;
 }
 
-function Header() {
+function Header({tab}) {
 	return (
 		<div className="header">
-			<Switch>
-				<Route exact path="/" render={() => (
+			{
+				tab === TABS[0] ?
 					<div>
 						<h1>Tony Hung</h1>
 						<div className="profile" />
 						<h2 className="keywords">Programmer | Gamer | Traveler</h2>
 					</div>
-				)} />
-				<Route render={() => <div className="profile hideOnMobile" />} />
-			</Switch>
+					:
+					<div className="profile hideOnMobile" />
+			}
 		</div>
 	)
 }
 
-function NavBar() {
+function NavBar({changeTab}) {
 	return (
 		<nav className="navbar navbar-default">
 			<div className="container-fluid">
 				<div className="navbar-collapse collapse">
 					<ul className="nav navbar-nav navbar-right">
-						<RowLink url="" label="Home" />
-						<RowLink url="/work" label="Work" />
-						<RowLink url="/contact" label="Contact" />
-						<RowLink url="/about-me" label="About Me" />
-						<RowLink url="/about-site" label="About This Site" />
+						{
+							TABS.map((t, i) => {
+								return (
+									<li key={i} onClick={() => changeTab(i)}><a>{t}</a></li>
+								)
+							})
+						}
 					</ul>
 				</div>
 			</div>
@@ -96,4 +119,4 @@ function BackgroundCarousel() {
 	}
 }
 
-const RowLink = ({url, label}) => <li><Link to={url}>{label}</Link></li>
+export default App;

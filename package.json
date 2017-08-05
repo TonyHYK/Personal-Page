@@ -1,8 +1,8 @@
 {
-  "name": "spa-github-pages",
+  "name": "tonyhyk-github-page",
   "version": "5.0.0",
   "private": true,
-  "description": "Single Page Apps for GitHub Pages",
+  "description": "Tony Hung's Github Page",
   "scripts": {
     "start": "webpack-dev-server --watch-poll",
     "build": "webpack"
@@ -14,8 +14,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-responsive-carousel": "^3.1.24",
-    "react-router-dom": "^4.1.1"
+    "react-responsive-carousel": "^3.1.24"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
